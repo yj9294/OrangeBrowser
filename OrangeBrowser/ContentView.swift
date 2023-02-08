@@ -44,6 +44,8 @@ struct ContentView: View {
                         ListView()
                             .onAppear{
                                 store.dispatch(.logEvent(.tabShow))
+                                store.dispatch(.adLoad(.native,.tab))
+                                store.dispatch(.adLoad(.interstitial))
                             }
                             .onDisappear{
                                 store.dispatch(.logEvent(.homeShow))
@@ -61,22 +63,11 @@ struct ContentView: View {
                         }
                     }
                     if root.isPresentClean {
-                        CleanView {
-                            cleanDismissAction()
-                        }
+                        CleanView()
                         .onDisappear{
                             store.dispatch(.logEvent(.homeShow))
                         }
                     }
-                }
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-                    AppEnterbackground = false
-                    store.dispatch(.launching)
-                    
-                    store.dispatch(.logEvent(.openHot))
-                }
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
-                    AppEnterbackground = true
                 }
             }
         }
@@ -87,6 +78,8 @@ extension ContentView {
     func confirmCleanAction() {
         store.state.root.isAlertClean = false
         store.state.root.isPresentClean = true
+        store.dispatch(.clean)
+        store.dispatch(.adDisappear(.native))
     }
     
     func privacyDismissAction() {
@@ -94,7 +87,6 @@ extension ContentView {
     }
     
     func cleanDismissAction() {
-        store.dispatch(.logEvent(.cleanAnimationCompletion))
         store.state.root.isPresentClean = false
         
         store.state.root.isAlret = true

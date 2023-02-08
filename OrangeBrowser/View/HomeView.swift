@@ -78,6 +78,16 @@ struct HomeView: View {
                     }
                     .padding(.horizontal, 16)
                     Spacer()
+                    if !root.isPresentTabView && !root.isPresentClean && !root.isPresentPrivacy {
+                        HStack{
+                            NativeView(model: root.adModel)
+                                .frame(height: 76)
+                        }
+                        .padding(.horizontal, 16)
+                        .onAppear{
+                            nativeViewWillAppear()
+                        }
+                    }
                 }
                 .padding(.vertical,20)
             }
@@ -136,6 +146,7 @@ extension HomeView {
     
     func tabAction() {
         store.state.root.isPresentTabView = true
+        store.dispatch(.adDisappear(.native))
     }
     
     func settingAction() {
@@ -166,6 +177,11 @@ extension HomeView {
         store.state.home.isLoading = true
         store.dispatch(.load(model.url))
         store.dispatch(.bindWebView)
+    }
+    
+    func nativeViewWillAppear() {
+        store.dispatch(.adLoad(.native, .home))
+        store.dispatch(.adLoad(.interstitial))
     }
 }
 

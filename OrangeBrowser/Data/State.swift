@@ -12,6 +12,7 @@ struct AppState {
     var root = RootState()
     var launch = LaunchState()
     var home = HomeState()
+    var ad = GADState()
 }
 
 extension AppState {
@@ -30,6 +31,8 @@ extension AppState {
         var alerMessage: String = ""
         var isAlertClean: Bool = false
         var isPresentClean: Bool = false
+        
+        var adModel: NativeViewModel = .None
     }
 }
 
@@ -184,6 +187,40 @@ extension AppState {
             case searchSuccess = "bnm_or"
         }
 
+    }
+}
+
+extension AppState {
+    struct GADState {
+        
+        @UserDefault(key: "state.ad.config")
+        var config: GADConfig?
+       
+        @UserDefault(key: "state.ad.limit")
+        var limit: GADLimit?
+        
+        var impressionDate:[GADPosition.Position: Date] = [:]
+        
+        let ads:[ADLoadModel] = GADPosition.allCases.map { p in
+            ADLoadModel(position: p)
+        }.filter { m in
+            m.position != .all
+        }
+        
+        func isLoaded(_ position: GADPosition) -> Bool {
+            return self.ads.filter {
+                $0.position == position
+            }.first?.isLoaded == true
+        }
+
+        func isLimited(in store: AppStore) -> Bool {
+            if limit?.date.isToday == true {
+                if (store.state.ad.limit?.showTimes ?? 0) >= (store.state.ad.config?.showTimes ?? 0) || (store.state.ad.limit?.clickTimes ?? 0) >= (store.state.ad.config?.clickTimes ?? 0) {
+                    return true
+                }
+            }
+            return false
+        }
     }
 }
 

@@ -15,10 +15,22 @@ struct ListView: View {
         store.state.home
     }
     
+    var root: AppState.RootState {
+        store.state.root
+    }
+    
     let colums:[GridItem] = [GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         GeometryReader { proxy in
             VStack{
+                
+                HStack{
+                    NativeView(model: root.adModel)
+                        .frame(height: 76)
+                }
+                .padding(.top, 20)
+                .padding(.horizontal, 16)
+                
                 ScrollView{
                     LazyVGrid(columns: colums) {
                         ForEach(home.webviews, id: \.self) { webview in
@@ -113,8 +125,10 @@ extension ListView {
     }
     
     func backAction() {
+        store.dispatch(.adDisappear(.native))
         store.dispatch(.bindWebView)
         store.state.root.isPresentTabView = false
+
     }
     
     func addAction() {

@@ -11,6 +11,7 @@ import FBSDKCoreKit
 
 @main
 struct OrangeBrowserApp: App {
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     init() {
         FirebaseApp.configure()
@@ -18,7 +19,8 @@ struct OrangeBrowserApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(AppStore())
+            RootView()
+                .environmentObject(AppStore())
         }
     }
     

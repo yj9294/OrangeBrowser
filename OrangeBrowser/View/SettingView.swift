@@ -133,12 +133,14 @@ extension SettingView {
         backAction()
         store.state.root.isPresentPrivacy = true
         store.state.root.PrivacyIndex = .terms
+        store.dispatch(.adDisappear(.native))
     }
     
     func privacyAction() {
         backAction()
         store.state.root.isPresentPrivacy = true
         store.state.root.PrivacyIndex = .privacy
+        store.dispatch(.adDisappear(.native))
     }
 }
 

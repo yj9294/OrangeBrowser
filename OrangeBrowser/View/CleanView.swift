@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CleanView: View {
-    var onDismiss: (()->Void)? = nil
     @State var degrees:Double = 0.0
     var body: some View {
         VStack(spacing: 150){
@@ -30,15 +29,6 @@ struct CleanView: View {
             Spacer()
         }
         .background(Color.white)
-        .onAppear{
-            Task{
-                if !Task.isCancelled {
-                    try? await Task.sleep(nanoseconds: 2_000_000_000)
-                    
-                    onDismiss?()
-                }
-            }
-        }
     }
 }
 
