@@ -53,6 +53,9 @@ struct ContentView: View {
                     }
                     if root.isPresentSetting {
                         SettingView()
+                            .onDisappear{
+                                store.dispatch(.adLoad(.native))
+                            }
                     }
                     if root.isPresentPrivacy {
                         PrivacyView(item: root.PrivacyIndex) {

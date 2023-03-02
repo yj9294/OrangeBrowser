@@ -102,6 +102,7 @@ extension SettingView {
         store.dispatch(.bindWebView)
         backAction()
         store.dispatch(.logEvent(.webNew, ["bro": "setting"]))
+        store.dispatch(.adDisappear(.native))
     }
     
     func shareAction() {

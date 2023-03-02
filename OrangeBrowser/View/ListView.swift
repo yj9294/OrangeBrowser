@@ -73,7 +73,7 @@ struct ListView: View {
                     }
                     .padding(.all, 16)
                 }
-                .frame(height: proxy.size.height - proxy.safeAreaInsets.top - proxy.safeAreaInsets.bottom - 60)
+                .frame(height: proxy.size.height - proxy.safeAreaInsets.top - proxy.safeAreaInsets.bottom - 60 - 96)
 
                 VStack{
                     ZStack {
