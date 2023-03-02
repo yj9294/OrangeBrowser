@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C772BFA529B0D26300519901 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C772BFA429B0D26300519901 /* GoogleService-Info.plist */; };
 		C786A7B5299335CE007558DF /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = C786A7B4299335CE007558DF /* GoogleMobileAds */; };
 		C7E4AD49298B531900F88C5B /* OrangeBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E4AD48298B531900F88C5B /* OrangeBrowserApp.swift */; };
 		C7E4AD4B298B531900F88C5B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E4AD4A298B531900F88C5B /* ContentView.swift */; };
@@ -33,11 +34,11 @@
 		C7E4AD8C298CB14100F88C5B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C7E4AD8B298CB14100F88C5B /* FirebaseAnalytics */; };
 		C7E4AD8E298CB14100F88C5B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C7E4AD8D298CB14100F88C5B /* FirebaseCrashlytics */; };
 		C7E4AD90298CB14100F88C5B /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = C7E4AD8F298CB14100F88C5B /* FirebaseRemoteConfig */; };
-		C7E4AD92298CB15400F88C5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7E4AD91298CB15400F88C5B /* GoogleService-Info.plist */; };
 		C7E4AD94298CB47800F88C5B /* FirebaseCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E4AD93298CB47800F88C5B /* FirebaseCommand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C772BFA429B0D26300519901 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7E4AD45298B531900F88C5B /* OrangeBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrangeBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E4AD48298B531900F88C5B /* OrangeBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeBrowserApp.swift; sourceTree = "<group>"; };
 		C7E4AD4A298B531900F88C5B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		C7E4AD82298C9BF500F88C5B /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		C7E4AD84298CA4EA00F88C5B /* CleanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanView.swift; sourceTree = "<group>"; };
 		C7E4AD86298CB02B00F88C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		C7E4AD91298CB15400F88C5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7E4AD93298CB47800F88C5B /* FirebaseCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCommand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,7 +100,7 @@
 		C7E4AD47298B531900F88C5B /* OrangeBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				C7E4AD91298CB15400F88C5B /* GoogleService-Info.plist */,
+				C772BFA429B0D26300519901 /* GoogleService-Info.plist */,
 				C7E4AD86298CB02B00F88C5B /* Info.plist */,
 				C7E4AD75298BB6E900F88C5B /* View */,
 				C7E4AD59298B53DA00F88C5B /* Util */,
@@ -239,7 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7E4AD6C298B60F700F88C5B /* Launch Screen.storyboard in Resources */,
-				C7E4AD92298CB15400F88C5B /* GoogleService-Info.plist in Resources */,
+				C772BFA529B0D26300519901 /* GoogleService-Info.plist in Resources */,
 				C7E4AD50298B531B00F88C5B /* Preview Assets.xcassets in Resources */,
 				C7E4AD4D298B531B00F88C5B /* Assets.xcassets in Resources */,
 			);
@@ -396,10 +396,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 20220302;
 				DEVELOPMENT_ASSET_PATHS = "\"OrangeBrowser/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HTJ8C6E28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrangeBrowser/Info.plist;
@@ -414,9 +414,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.OrangeBrowser;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.facer.quickly.Orange.browser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -431,10 +432,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 20220302;
 				DEVELOPMENT_ASSET_PATHS = "\"OrangeBrowser/Preview Content\"";
-				DEVELOPMENT_TEAM = 7HTJ8C6E28;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrangeBrowser/Info.plist;
@@ -449,9 +450,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.testbird.OrangeBrowser;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.facer.quickly.Orange.browser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;

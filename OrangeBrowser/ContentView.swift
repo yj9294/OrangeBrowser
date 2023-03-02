@@ -34,7 +34,7 @@ struct ContentView: View {
                             if let url = home.webview.webView.url?.absoluteString {
                                 ShareView(url: url)
                             } else {
-                                ShareView(url: "https://itunes.apple.com/cn/app/id")
+                                ShareView(url: "https://itunes.apple.com/cn/app/id6445936667")
                             }
                         }
                         .onAppear{
