@@ -403,6 +403,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrangeBrowser/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,6 +440,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OrangeBrowser/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
