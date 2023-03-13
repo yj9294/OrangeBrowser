@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
 
 struct HomeView: View {
     
@@ -98,12 +99,12 @@ struct HomeView: View {
                         cleanAction()
                     }
                 Spacer()
-
+                
                 ZStack {
                     Image("home_tab")
                         .onTapGesture {
                             tabAction()
-                    }
+                        }
                     Text("\(home.webviews.count)")
                         .font(.system(size: 12))
                 }
@@ -117,6 +118,16 @@ struct HomeView: View {
             .padding(.vertical, 20)
         }
         .background(Color("FFFEF8"))
+        .onAppear{
+            Task {
+                if !Task.isCancelled {
+                    try await Task.sleep(nanoseconds: 2_000_000_000)
+                    ATTrackingManager.requestTrackingAuthorization { _ in
+                    }
+                }
+            }
+            
+        }
     }
 }
 
