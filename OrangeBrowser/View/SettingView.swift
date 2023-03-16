@@ -125,7 +125,7 @@ extension SettingView {
     
     func rateAction() {
         backAction()
-        if let url = URL(string: "https://itunes.apple.com/cn/app/id") {
+        if let url = URL(string: "https://itunes.apple.com/cn/app/id6445936667") {
             openURL(url)
         }
     }
